@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming - Little Nightmares II</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="avaliacao.css" />
+</head>
+<body>
+  <aside class="barra-lateral">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+      <h1>COBRA GAMING</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><span class="icone">🏠</span> Home</a></li>
+        <li><a href="biblioteca.html"><span class="icone">📂</span> Biblioteca</a></li>
+        <li><a href="carrinho.html"><span class="icone">🛒</span> Carrinho</a></li>
+        <li><a href="listadedesejos.html"><span class="icone">❤️</span> Lista de Desejos</a></li>
+        <li><a href="descontos.html"><span class="icone">🛍️</span> Descontos</a></li>
+        <li><a href="carteira.html"><span class="icone">👛</span> Carteira</a></li>
+        <li><a href="amigos.html"><span class="icone">👥</span> Amigos</a></li>
+        <li><a href="fale-conosco.html"><span class="icone">✉️</span> Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="conteudo-principal">
+    <header class="pesquisa-carrinho">
+      <div class="menu-toggle">
+          <div class="hamburguer"></div>
+      </div>
+      <input
+        type="search"
+        placeholder="Digite para pesquisar"
+        aria-label="Pesquisar jogos"
+      />
+      <div class="icones-carrinho">
+        <a href="carrinho.html" aria-label="Ir para o carrinho"><span>🛒</span></a>
+        <a href="notificacoes.html" aria-label="Ver notificações"><span>🔔</span></a>
+        <a href="perfil.html" aria-label="Ir para o perfil"><span>⚡</span></a>
+      </div>
+    </header>
+
+    <section class="secao-descricao-jogo">
+      <div class="banner-jogo">
+        <img src="imagens/little_nightmares_ii_thumb.png" alt="Banner do Little Nightmares II" />
+      </div>
+      <div class="conteudo-descricao-jogo">
+        <h2>Little Nightmares II</h2>
+        <p>Volte a um mundo de terror encantador em Little Nightmares II, um jogo de aventura de suspense em que você joga como Mono, um jovem garoto preso em um mundo que foi distorcido pela transmissão murmurante de uma torre distante. Com Six, a garota da capa de chuva amarela, como sua guia, Mono parte para descobrir os segredos sombrios da Torre de Sinalização.</p>
+        
+        <div class="acoes-compra">
+            <button class="botao-padrao botao-comprar-agora">Comprar</button>
+            <button class="botao-secundario botao-add-desejo">❤️ Adicionar à Lista de Desejos</button>
+        </div>
+
+        <div class="secao-avaliacoes">
+            <h3>Avaliações de Jogadores</h3>
+            <div class="lista-avaliacoes">
+                <div class="cartao-avaliacao">
+                    <div class="cabecalho-avaliacao">
+                        <img src="imagens/usuario2.jpeg" alt="Avatar de Ana">
+                        <h4>Ana</h4>
+                    </div>
+                    <p>"A atmosfera desse jogo é perfeita! Consegue ser assustador e bonito ao mesmo tempo. A sequência superou o original."</p>
+                </div>
+                <div class="cartao-avaliacao">
+                    <div class="cabecalho-avaliacao">
+                        <img src="imagens/usuario3.png" alt="Avatar de Lucas">
+                        <h4>Lucas</h4>
+                    </div>
+                    <p>"História muito intrigante e cheia de mistérios. O final me deixou pensando por dias! Jogo obrigatório para fãs de suspense."</p>
+                </div>
+            </div>
+            
+            <div class="adicionar-avaliacao-container">
+                <h4>Deixe sua avaliação</h4>
+                <textarea id="novo-comentario-texto" placeholder="Digite seu comentário aqui..."></textarea>
+                <button id="btn-adicionar-comentario" class="botao-padrao">Adicionar Comentário</button>
+            </div>
+            <div id="novos-comentarios-lista">
+            </div>
+            
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts.js" defer></script>
+  <script src="avaliacao.js" defer></script>
+</body>
+</html>

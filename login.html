@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming - Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="corpo-autenticacao">
+
+  <div class="container-autenticacao">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+    </div>
+    
+    <form id="login-form" class="formulario-autenticacao" action="index.html" method="get">
+      <h2>Acessar sua Conta</h2>
+      
+      <div class="grupo-input">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" />
+      </div>
+
+      <div class="grupo-input">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required placeholder="********" />
+      </div>
+      
+      <div class="opcoes-formulario">
+        <label><input type="checkbox" name="lembrar"/> Lembrar-me</label>
+        <a href="esqueceu-senha.html">Esqueceu a senha?</a>
+      </div>
+
+      <button type="submit" class="botao-autenticacao">Entrar</button>
+      
+      <p class="alternar-autenticacao">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('login-form');
+
+    form.addEventListener('submit', function(event) {
+      
+      event.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      if (email === 'cabuloso@gmail.com' && senha === 'admin') {
+        alert('Login bem-sucedido! Redirecionando...');
+        window.location.href = 'index.html';
+      } else {
+        alert('E-mail ou senha incorretos. Tente novamente.');
+      }
+    });
+  </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming - Carteira</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="barra-lateral">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+      <h1>COBRA GAMING</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><span class="icone">🏠</span> Home</a></li>
+        <li><a href="biblioteca.html"><span class="icone">📂</span> Biblioteca</a></li>
+        <li><a href="carrinho.html"><span class="icone">🛒</span> Carrinho</a></li>
+        <li><a href="listadedesejos.html"><span class="icone">❤️</span> Lista de Desejos</a></li>
+        <li><a href="descontos.html"><span class="icone">🛍️</span> Descontos</a></li>
+        <li><a href="carteira.html" class="active"><span class="icone">👛</span> Carteira</a></li>
+        <li><a href="amigos.html"><span class="icone">👥</span> Amigos</a></li>
+        <li><a href="fale-conosco.html"><span class="icone">✉️</span> Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="conteudo-principal">
+    <header class="pesquisa-carrinho">
+      <div class="menu-toggle">
+          <div class="hamburguer"></div>
+      </div>
+      <input
+        type="search"
+        placeholder="Digite para pesquisar"
+        aria-label="Pesquisar jogos"/>
+        <div class="icones-carrinho">
+            <a href="carrinho.html" aria-label="Ir para o carrinho"><span>🛒</span></a>
+            <a href="notificacoes.html" aria-label="Ver notificações"><span>🔔</span></a>
+            <a href="perfil.html" aria-label="Ir para o perfil"><span>⚡</span></a>
+        </div>
+    </header>
+
+    <section class="secao-carteira">
+      <div class="cabecalho-secao">
+          <h2>Minha Carteira</h2>
+      </div>
+
+      <div class="saldo-carteira">
+        <span>Saldo Atual</span>
+        <strong>R$ 27,53</strong>
+      </div>
+
+      <div class="acoes-carteira">
+        <button class="botao-padrao botao-add-credito">Adicionar Créditos</button>
+        <button class="botao-padrao botao-ver-detalhes">Ver Detalhes</button>
+      </div>
+
+      <h3>Histórico de Transações</h3>
+
+      <table class="historico-carteira">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Data">01/06/2025</td>
+            <td data-label="Descrição">Compra: Little Nightmares II</td>
+            <td data-label="Valor" class="debito">- R$ 76,99</td>
+            <td data-label="Status">Concluído</td>
+          </tr>
+          <tr>
+            <td data-label="Data">28/05/2025</td>
+            <td data-label="Descrição">Crédito Adicionado</td>
+            <td data-label="Valor" class="credito">+ R$ 100,00</td>
+            <td data-label="Status">Concluído</td>
+          </tr>
+          <tr>
+            <td data-label="Data">25/05/2025</td>
+            <td data-label="Descrição">Compra: Unravel</td>
+            <td data-label="Valor" class="debito">- R$ 85,00</td>
+            <td data-label="Status">Concluído</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+  </main>
+  <script src="scripts.js" defer></script>
+</body>
+</html>

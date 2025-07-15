@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming - Perfil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="barra-lateral">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+      <h1>COBRA GAMING</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><span class="icone">🏠</span> Home</a></li>
+        <li><a href="biblioteca.html"><span class="icone">📂</span> Biblioteca</a></li>
+        <li><a href="carrinho.html"><span class="icone">🛒</span> Carrinho</a></li>
+        <li><a href="listadedesejos.html"><span class="icone">❤️</span> Lista de Desejos</a></li>
+        <li><a href="descontos.html"><span class="icone">🛍️</span> Descontos</a></li>
+        <li><a href="carteira.html"><span class="icone">👛</span> Carteira</a></li>
+        <li><a href="amigos.html"><span class="icone">👥</span> Amigos</a></li>
+        <li><a href="fale-conosco.html"><span class="icone">✉️</span> Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="conteudo-principal">
+    <header class="pesquisa-carrinho">
+      <input
+        type="search"
+        placeholder="Digite para pesquisar"
+        aria-label="Pesquisar jogos"/>
+        <div class="icones-carrinho">
+          <a href="carrinho.html" aria-label="Ir para o carrinho"><span>🛒</span></a>
+          <a href="notificacoes.html" aria-label="Ver notificações"><span>🔔</span></a>
+          <a href="perfil.html" aria-label="Ir para o perfil"><span>⚡</span></a>
+        </div>
+    </header>
+
+    <section class="secao-perfil">
+      <div class="cabecalho-secao">
+        <h2>Meu Perfil</h2>
+      </div>
+
+      <div class="container-perfil">
+        <div class="container-avatar">
+          <img src="imagens/avatar.png" alt="Avatar do usuário" class="avatar" />
+          <button class="botao-padrao botao-mudar-foto">Alterar Foto</button>
+        </div>
+
+        <form class="formulario-perfil">
+          <div class="grupo-input">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" value="João Silva" />
+          </div>
+          <div class="grupo-input">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" value="joao.silva@email.com" />
+          </div>
+
+          <fieldset>
+            <legend>Alterar Senha</legend>
+            <div class="grupo-input">
+                <label for="current-password">Senha Atual</label>
+                <input type="password" id="current-password" name="current-password" placeholder="********" />
+            </div>
+            <div class="grupo-input">
+                <label for="new-password">Nova Senha</label>
+                <input type="password" id="new-password" name="new-password" placeholder="********" />
+            </div>
+            <div class="grupo-input">
+                <label for="confirm-password">Confirmar Nova Senha</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="********" />
+            </div>
+          </fieldset>
+
+          <div class="acoes-formulario">
+            <button type="submit" class="botao-salvar">Salvar Alterações</button>
+            <a href="login.html" class="botao-sair">Sair</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

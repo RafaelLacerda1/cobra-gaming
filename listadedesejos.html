@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming - Lista de Desejos</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Garante que o corpo ocupe toda a altura e seja o container de rolagem */
+    html, body {
+      height: 100%;
+      overflow-y: auto; /* Permite a rolagem no corpo da página */
+    }
+
+    /* Remove a rolagem individual do conteúdo principal */
+    .conteudo-principal {
+      height: auto;
+      overflow-y: visible;
+    }
+
+    /* Mantém a barra lateral fixa na tela */
+    .barra-lateral {
+      position: fixed;
+      height: 100vh; /* Ocupa 100% da altura da tela */
+    }
+
+    /* Adiciona uma margem à esquerda no conteúdo principal para não ficar sob a barra lateral */
+    .conteudo-principal {
+       /* A largura da sua barra lateral. Ajuste se necessário. */
+      margin-left: 280px; 
+    }
+  </style>
+</head>
+<body>
+  <aside class="barra-lateral">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+      <h1>COBRA GAMING</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><span class="icone">🏠</span> Home</a></li>
+        <li><a href="biblioteca.html"><span class="icone">📂</span> Biblioteca</a></li>
+        <li><a href="carrinho.html"><span class="icone">🛒</span> Carrinho</a></li>
+        <li><a href="listadedesejos.html" class="active"><span class="icone">❤️</span> Lista de Desejos</a></li>
+        <li><a href="descontos.html"><span class="icone">🛍️</span> Descontos</a></li>
+        <li><a href="carteira.html"><span class="icone">👛</span> Carteira</a></li>
+        <li><a href="amigos.html"><span class="icone">👥</span> Amigos</a></li>
+        <li><a href="fale-conosco.html"><span class="icone">✉️</span> Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="conteudo-principal">
+    <header class="pesquisa-carrinho">
+      <div class="menu-toggle">
+          <div class="hamburguer"></div>
+      </div>
+      <input
+        type="search"
+        placeholder="Digite para pesquisar"
+        aria-label="Pesquisar jogos"/>
+        <div class="icones-carrinho">
+          <a href="carrinho.html" aria-label="Ir para o carrinho"><span>🛒</span></a>
+          <a href="notificacoes.html" aria-label="Ver notificações"><span>🔔</span></a>
+          <a href="perfil.html" aria-label="Ir para o perfil"><span>⚡</span></a>
+        </div>
+    </header>
+
+    <section class="secao-lista-desejos">
+      <div class="cabecalho-secao">
+          <h2>Lista de Desejos</h2>
+      </div>
+
+      <div class="grid-lista-desejos">
+        <article class="cartao-lista-desejos">
+          <img src="imagens/planet_of_lana_banner.png" alt="Planet of Lana" />
+          <h3>Planet of Lana</h3>
+          <div class="tags">
+            <span>Aventura</span>
+            <span>Quebra-cabeça</span>
+            <span>Plataforma</span>
+          </div>
+          <div class="acoes">
+            <button class="botao-padrao botao-add-carrinho">Adicionar ao Carrinho</button>
+            <button class="botao-remover" aria-label="Remover Planet of Lana">&times;</button>
+          </div>
+        </article>
+
+        <article class="cartao-lista-desejos">
+          <img src="imagens/little_nightmares_ii_thumb.png" alt="Little Nightmares II" />
+          <h3>Little Nightmares II</h3>
+          <div class="tags">
+            <span>Aventura</span>
+            <span>Quebra-cabeça</span>
+            <span>Terror</span>
+          </div>
+          <div class="acoes">
+            <button class="botao-padrao botao-add-carrinho">Adicionar ao Carrinho</button>
+            <button class="botao-remover" aria-label="Remover Little Nightmares II">&times;</button>
+          </div>
+        </article>
+
+        <article class="cartao-lista-desejos">
+          <img src="imagens/unravel_thumb.png" alt="Unravel" />
+          <h3>Unravel</h3>
+          <div class="tags">
+            <span>Plataforma</span>
+            <span>Puzzle</span>
+          </div>
+          <div class="acoes">
+            <button class="botao-padrao botao-add-carrinho">Adicionar ao Carrinho</button>
+            <button class="botao-remover" aria-label="Remover Unravel">&times;</button>
+          </div>
+        </article>
+      </div>
+
+    </section>
+  </main>
+  <script src="scripts.js" defer></script>
+</body>
+</html>

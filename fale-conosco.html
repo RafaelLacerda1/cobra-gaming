@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming - Fale Conosco</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="barra-lateral">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+      <h1>COBRA GAMING</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><span class="icone">🏠</span> Home</a></li>
+        <li><a href="biblioteca.html"><span class="icone">📂</span> Biblioteca</a></li>
+        <li><a href="carrinho.html"><span class="icone">🛒</span> Carrinho</a></li>
+        <li><a href="listadedesejos.html"><span class="icone">❤️</span> Lista de Desejos</a></li>
+        <li><a href="descontos.html"><span class="icone">🛍️</span> Descontos</a></li>
+        <li><a href="carteira.html"><span class="icone">👛</span> Carteira</a></li>
+        <li><a href="amigos.html"><span class="icone">👥</span> Amigos</a></li>
+        <li><a href="fale-conosco.html" class="active"><span class="icone">✉️</span> Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="conteudo-principal">
+    <header class="pesquisa-carrinho">
+        <div class="menu-toggle">
+            <div class="hamburguer"></div>
+        </div>
+      <input
+        type="search"
+        placeholder="Digite para pesquisar"
+        aria-label="Pesquisar jogos"
+      />
+      <div class="icones-carrinho">
+        <a href="carrinho.html" aria-label="Ir para o carrinho"><span>🛒</span></a>
+        <a href="notificacoes.html" aria-label="Ver notificações"><span>🔔</span></a>
+        <a href="perfil.html" aria-label="Ir para o perfil"><span>⚡</span></a>
+      </div>
+    </header>
+
+    <section class="secao-fale-conosco">
+      <div class="cabecalho-secao">
+        <h2>Fale Conosco</h2>
+      </div>
+      <form class="formulario-contato" action="#" method="post">
+        <div class="grupo-input">
+          <label for="nome">Seu Nome</label>
+          <input type="text" id="nome" name="nome" required placeholder="João Silva" />
+        </div>
+        <div class="grupo-input">
+          <label for="email">Seu E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="joao.silva@email.com" />
+        </div>
+        <div class="grupo-input">
+          <label for="assunto">Assunto</label>
+          <input type="text" id="assunto" name="assunto" required placeholder="Ex: Problema com uma compra" />
+        </div>
+        <div class="grupo-input">
+          <label for="mensagem">Sua Mensagem</label>
+          <textarea id="mensagem" name="mensagem" required placeholder="Descreva sua dúvida ou problema aqui..."></textarea>
+        </div>
+        <button type="submit" class="botao-padrao botao-enviar">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+  <script src="scripts.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming - Biblioteca</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .conteudo-principal {
+      height: auto;
+      overflow-y: visible;
+      margin-left: 280px; 
+    }
+    .barra-lateral {
+      position: fixed;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <aside class="barra-lateral">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+      <h1>COBRA GAMING</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><span class="icone">🏠</span> Home</a></li>
+        <li><a href="biblioteca.html" class="active"><span class="icone">📂</span> Biblioteca</a></li>
+        <li><a href="carrinho.html"><span class="icone">🛒</span> Carrinho</a></li>
+        <li><a href="listadedesejos.html"><span class="icone">❤️</span> Lista de Desejos</a></li>
+        <li><a href="descontos.html"><span class="icone">🛍️</span> Descontos</a></li>
+        <li><a href="carteira.html"><span class="icone">👛</span> Carteira</a></li>
+        <li><a href="amigos.html"><span class="icone">👥</span> Amigos</a></li>
+        <li><a href="fale-conosco.html"><span class="icone">✉️</span> Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="conteudo-principal">
+
+    <header class="pesquisa-carrinho">
+      <div class="menu-toggle">
+          <div class="hamburguer"></div>
+      </div>
+      <input
+        type="search"
+        placeholder="Pesquisar na biblioteca..."
+        aria-label="Pesquisar na biblioteca"/>
+        <div class="icones-carrinho">
+            <a href="carrinho.html" aria-label="Ir para o carrinho"><span>🛒</span></a>
+            <a href="notificacoes.html" aria-label="Ver notificações"><span>🔔</span></a>
+            <a href="perfil.html" aria-label="Ir para o perfil"><span>⚡</span></a>
+        </div>
+    </header>
+
+    <section class="banner-biblioteca">
+      <div class="overlay">
+        <h2>Minha Biblioteca</h2>
+      </div>
+    </section>
+
+    <section class="secao-biblioteca">
+      <div class="grid-biblioteca">
+        <article class="cartao-biblioteca">
+          <img src="imagens/planet_of_lana_banner.png" alt="Planet of Lana" />
+          <h3>Planet of Lana</h3>
+          <div class="tags">
+            <span>Aventura</span>
+            <span>Quebra-cabeça</span>
+            <span>Plataforma</span>
+          </div>
+          <button class="botao-padrao botao-jogar">Jogar</button>
+        </article>
+
+        <article class="cartao-biblioteca">
+          <img src="imagens/little_nightmares_ii_thumb.png" alt="Little Nightmares II" />
+          <h3>Little Nightmares II</h3>
+          <div class="tags">
+            <span>Aventura</span>
+            <span>Quebra-cabeça</span>
+            <span>Terror</span>
+          </div>
+          <button class="botao-padrao botao-jogar">Jogar</button>
+        </article>
+
+        <article class="cartao-biblioteca">
+          <img src="imagens/unravel_thumb.png" alt="Unravel" />
+          <h3>Unravel</h3>
+          <div class="tags">
+            <span>Plataforma</span>
+            <span>Puzzle</span>
+          </div>
+          <button class="botao-padrao botao-jogar">Jogar</button>
+        </article>
+      </div>
+
+    </section>
+  </main>
+  <script src="scripts.js" defer></script>
+</body>
+</html>

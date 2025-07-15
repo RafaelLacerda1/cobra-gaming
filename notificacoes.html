@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming - Notificações</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="barra-lateral">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+      <h1>COBRA GAMING</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><span class="icone">🏠</span> Home</a></li>
+        <li><a href="biblioteca.html"><span class="icone">📂</span> Biblioteca</a></li>
+        <li><a href="carrinho.html"><span class="icone">🛒</span> Carrinho</a></li>
+        <li><a href="listadedesejos.html"><span class="icone">❤️</span> Lista de desejos</a></li>
+        <li><a href="descontos.html"><span class="icone">🛍️</span> Desconto</a></li>
+        <li><a href="carteira.html"><span class="icone">👛</span> Carteira</a></li>
+        <li><a href="amigos.html"><span class="icone">👥</span> Amigos</a></li>
+        <li><a href="fale-conosco.html"><span class="icone">✉️</span> Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="conteudo-principal">
+    <header class="pesquisa-carrinho">
+      <div class="menu-toggle">
+          <div class="hamburguer"></div>
+      </div>
+      <input
+        type="search"
+        placeholder="Digite para pesquisar"
+        aria-label="Pesquisar jogos"
+      />
+      <div class="icones-carrinho">
+        <a href="carrinho.html" aria-label="Ir para o carrinho">
+          <span class="icone-carrinho">🛒</span>
+        </a>
+        <a href="notificacoes.html" aria-label="Ver notificações">
+            <span class="icone-notificacao">🔔</span>
+        </a>
+        <a href="perfil.html" aria-label="Ir para o perfil">
+            <span class="icone-perfil">⚡</span>
+        </a>
+      </div>
+    </header>
+
+    <section class="secao-notificacoes">
+        <h2>Notificações</h2>
+        <div class="lista-notificacoes">
+            <div class="item-notificacao">
+                <span class="icone-notificacao">🎁</span>
+                <p>O jogo <strong>Planet of Lana</strong> da sua lista de desejos está em promoção!</p>
+                <span class="data-notificacao">Agora mesmo</span>
+            </div>
+            <div class="item-notificacao">
+                <span class="icone-notificacao">👍</span>
+                <p><strong>Maria Clara</strong> aceitou seu pedido de amizade.</p>
+                <span class="data-notificacao">Há 2 horas</span>
+            </div>
+            <div class="item-notificacao">
+                <span class="icone-notificacao">🎮</span>
+                <p>Sua compra de <strong>Unravel</strong> foi confirmada. Bom jogo!</p>
+                <span class="data-notificacao">Ontem</span>
+            </div>
+        </div>
+    </section>
+
+  </main>
+  <script src="scripts.js" defer></script>
+</body>
+</html>

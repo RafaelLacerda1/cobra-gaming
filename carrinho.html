@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming - Carrinho</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="barra-lateral">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+      <h1>COBRA GAMING</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><span class="icone">🏠</span> Home</a></li>
+        <li><a href="biblioteca.html"><span class="icone">📂</span> Biblioteca</a></li>
+        <li><a href="carrinho.html" class="active"><span class="icone">🛒</span> Carrinho</a></li>
+        <li><a href="listadedesejos.html"><span class="icone">❤️</span> Lista de Desejos</a></li>
+        <li><a href="descontos.html"><span class="icone">🛍️</span> Descontos</a></li>
+        <li><a href="carteira.html"><span class="icone">👛</span> Carteira</a></li>
+        <li><a href="amigos.html"><span class="icone">👥</span> Amigos</a></li>
+        <li><a href="fale-conosco.html"><span class="icone">✉️</span> Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="conteudo-principal">
+    <header class="pesquisa-carrinho">
+      <div class="menu-toggle">
+          <div class="hamburguer"></div>
+      </div>
+      <input
+        type="search"
+        placeholder="Digite para pesquisar"
+        aria-label="Pesquisar jogos"/>
+        <div class="icones-carrinho">
+            <a href="carrinho.html" aria-label="Ir para o carrinho"><span>🛒</span></a>
+            <a href="notificacoes.html" aria-label="Ver notificações"><span>🔔</span></a>
+            <a href="perfil.html" aria-label="Ir para o perfil"><span>⚡</span></a>
+        </div>
+    </header>
+
+    <section class="secao-carrinho">
+      <div class="cabecalho-secao">
+        <h2>Carrinho de Compras</h2>
+      </div>
+      <table class="tabela-carrinho" role="table">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+            <th>Subtotal</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="info-produto" data-label="Produto">
+              <img src="imagens/little_nightmares_ii_thumb.png" alt="Little Nightmares II" />
+              <span>Little Nightmares II</span>
+            </td>
+            <td data-label="Quantidade">
+              <input type="number" min="1" value="1" />
+            </td>
+            <td data-label="Preço">R$ 76,99</td>
+            <td data-label="Subtotal">R$ 76,99</td>
+            <td><button class="botao-remover" aria-label="Remover Little Nightmares II">&times;</button></td>
+          </tr>
+          <tr>
+            <td class="info-produto" data-label="Produto">
+              <img src="imagens/unravel_thumb.png" alt="Unravel" />
+              <span>Unravel</span>
+            </td>
+            <td data-label="Quantidade">
+              <input type="number" min="1" value="2" />
+            </td>
+            <td data-label="Preço">R$ 85,00</td>
+            <td data-label="Subtotal">R$ 170,00</td>
+            <td><button class="botao-remover" aria-label="Remover Unravel">&times;</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="resumo-carrinho">
+        <span>Total:</span>
+        <span class="preco-total">R$ 246,99</span>
+      </div>
+
+      <button class="botao-padrao botao-finalizar">Finalizar Compra</button>
+    </section>
+  </main>
+  <script src="scripts.js" defer></script>
+</body>
+</html>

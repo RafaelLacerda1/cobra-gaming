@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming - Amigos</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .conteudo-principal {
+      height: auto;
+      overflow-y: visible;
+      margin-left: 280px; 
+    }
+    .barra-lateral {
+      position: fixed;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <aside class="barra-lateral">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+      <h1>COBRA GAMING</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><span class="icone">🏠</span> Home</a></li>
+        <li><a href="biblioteca.html"><span class="icone">📂</span> Biblioteca</a></li>
+        <li><a href="carrinho.html"><span class="icone">🛒</span> Carrinho</a></li>
+        <li><a href="listadedesejos.html"><span class="icone">❤️</span> Lista de Desejos</a></li>
+        <li><a href="descontos.html"><span class="icone">🛍️</span> Descontos</a></li>
+        <li><a href="carteira.html"><span class="icone">👛</span> Carteira</a></li>
+        <li><a href="amigos.html" class="active"><span class="icone">👥</span> Amigos</a></li>
+        <li><a href="fale-conosco.html"><span class="icone">✉️</span> Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="conteudo-principal">
+    <header class="pesquisa-carrinho">
+      <div class="menu-toggle">
+          <div class="hamburguer"></div>
+      </div>
+      <input
+        type="search"
+        placeholder="Pesquisar amigos"
+        aria-label="Pesquisar amigos"
+      />
+      <div class="icones-carrinho">
+        <a href="carrinho.html" aria-label="Ir para o carrinho"><span>🛒</span></a>
+        <a href="notificacoes.html" aria-label="Ver notificações"><span>🔔</span></a>
+        <a href="perfil.html" aria-label="Ir para o perfil"><span>⚡</span></a>
+      </div>
+    </header>
+
+    <section class="secao-amigos">
+      <div class="cabecalho-secao">
+        <h2>Lista de Amigos</h2>
+      </div>
+      <div class="lista-amigos">
+        <div class="item-amigo">
+          <div class="info-amigo">
+            <img src="imagens/usuario1.png" alt="Avatar de Maria Clara">
+            <div class="detalhes-amigo">
+              <h4>Maria Clara</h4>
+              <p>Online</p>
+            </div>
+          </div>
+          <div class="status-amigo">
+            <span class="indicador-status online"></span> Online
+          </div>
+        </div>
+        
+        <div class="item-amigo">
+          <div class="info-amigo">
+            <img src="imagens/usuario4.png" alt="Avatar de Pedro">
+            <div class="detalhes-amigo">
+              <h4>Pedro</h4>
+              <p>Jogando Planet of Lana</p>
+            </div>
+          </div>
+          <div class="status-amigo">
+            <span class="indicador-status ingame"></span> Em Jogo
+          </div>
+        </div>
+        
+        <div class="item-amigo">
+          <div class="info-amigo">
+            <img src="imagens/usuario2.jpeg" alt="Avatar de Ana">
+            <div class="detalhes-amigo">
+              <h4>Ana</h4>
+              <p>Visto por último: 2 horas atrás</p>
+            </div>
+          </div>
+          <div class="status-amigo">
+            <span class="indicador-status offline"></span> Offline
+          </div>
+        </div>
+        
+         <div class="item-amigo">
+          <div class="info-amigo">
+            <img src="imagens/usuario3.png" alt="Avatar de Lucas">
+            <div class="detalhes-amigo">
+              <h4>Lucas</h4>
+              <p>Visto por último: Ontem</p>
+            </div>
+          </div>
+          <div class="status-amigo">
+            <span class="indicador-status offline"></span> Offline
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <script src="scripts.js" defer></script>
+</body>
+</html>

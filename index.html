@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobra Gaming</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="barra-lateral">
+    <div class="logo">
+      <img src="imagens/cobra_gaming_logo.png" alt="Logo da Cobra Gaming" />
+      <h1>COBRA GAMING</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active"><span class="icone">🏠</span> Home</a></li>
+        <li><a href="biblioteca.html"><span class="icone">📂</span> Biblioteca</a></li>
+        <li><a href="carrinho.html"><span class="icone">🛒</span> Carrinho</a></li>
+        <li><a href="listadedesejos.html"><span class="icone">❤️</span> Lista de Desejos</a></li>
+        <li><a href="descontos.html"><span class="icone">🛍️</span> Descontos</a></li>
+        <li><a href="carteira.html"><span class="icone">👛</span> Carteira</a></li>
+        <li><a href="amigos.html"><span class="icone">👥</span> Amigos</a></li>
+        <li><a href="fale-conosco.html"><span class="icone">✉️</span> Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="conteudo-principal">
+    <header class="pesquisa-carrinho">
+        <div class="menu-toggle">
+            <div class="hamburguer"></div>
+        </div>
+      <input
+        type="search"
+        placeholder="Digite para pesquisar"
+        aria-label="Pesquisar jogos"
+      />
+      <div class="icones-carrinho">
+        <a href="carrinho.html" aria-label="Ir para o carrinho"><span>🛒</span></a>
+        <a href="notificacoes.html" aria-label="Ver notificações"><span>🔔</span></a>
+        <a href="perfil.html" aria-label="Ir para o perfil"><span>⚡</span></a>
+      </div>
+    </header>
+
+    <section class="container-carrossel">
+        <input type="radio" name="carousel-radio" id="radio-carrossel1" class="controles-carrossel" checked>
+        <input type="radio" name="carousel-radio" id="radio-carrossel2" class="controles-carrossel">
+        <input type="radio" name="carousel-radio" id="radio-carrossel3" class="controles-carrossel">
+        
+        <div class="wrapper-carrossel">
+            <div class="slides-carrossel">
+                <a href="planet-of-lana.html" class="slide-carrossel">
+                    <img src="imagens/planet_of_lana_banner.png" alt="Banner do jogo Planet of Lana" />
+                    <div class="info-destaque">
+                        <h2>PLANET OF LANA</h2>
+                        <p class="subtitulo">UMA ODISSEIA FORA DA TERRA</p>
+                    </div>
+                </a>
+                <a href="little-nightmares-2.html" class="slide-carrossel">
+                    <img src="imagens/little_nightmares_ii_thumb.png" alt="Banner do jogo Little Nightmares II" />
+                    <div class="info-destaque">
+                        <h2>LITTLE NIGHTMARES II</h2>
+                        <p class="subtitulo">VOLTE A UM MUNDO DE TERROR</p>
+                    </div>
+                </a>
+                <a href="unravel.html" class="slide-carrossel">
+                    <img src="imagens/unravel_thumb.png" alt="Banner do jogo Unravel" />
+                    <div class="info-destaque">
+                        <h2>UNRAVEL</h2>
+                        <p class="subtitulo">UMA AVENTURA DE LÃ</p>
+                    </div>
+                </a>
+            </div>
+            <div class="navegacao-dots">
+                <label for="radio-carrossel1"></label>
+                <label for="radio-carrossel2"></label>
+                <label for="radio-carrossel3"></label>
+            </div>
+        </div>
+    </section>
+
+    <section class="recomendados">
+      <div class="cabecalho-secao">
+        <h3>RECOMENDADO PARA VOCÊ 🔥</h3>
+        <a href="#" class="ver-tudo">Ver tudo</a>
+      </div>
+
+      <div class="cartoes-jogo">
+        <div class="cartao-jogo">
+          <a href="little-nightmares-2.html">
+          <img src="imagens/little_nightmares_ii_thumb.png" alt="Little Nightmares II" />
+          </a>
+          <h4>Little Nightmares II</h4>
+          <div class="tags">
+            <span>Aventura</span>
+            <span>Quebra-cabeça</span>
+            <span>Terror</span>
+          </div>
+          <p class="preco">R$ 76,99</p>
+          <div class="acoes-card">
+              <button class="botao-padrao botao-add-carrinho">Adicionar ao Carrinho</button>
+              <button class="botao-add-desejo" aria-label="Adicionar à Lista de Desejos">❤️</button>
+          </div>
+        </div>
+
+        <div class="cartao-jogo">
+          <a href="unravel.html">
+          <img src="imagens/unravel_thumb.png" alt="Unravel" />
+          </a>
+          <h4>Unravel</h4>
+          <div class="tags">
+            <span>Plataforma</span>
+            <span>Puzzle</span>
+          </div>
+          <p class="preco">R$ 85,00</p>
+          <div class="acoes-card">
+              <button class="botao-padrao botao-add-carrinho">Adicionar ao Carrinho</button>
+              <button class="botao-add-desejo" aria-label="Adicionar à Lista de Desejos">❤️</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="scripts.js" defer></script>
+</body>
+</html>
