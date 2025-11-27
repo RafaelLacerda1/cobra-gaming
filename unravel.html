@@ -1,8 +1,14 @@
+<?php
+header("Content-Security-Policy: default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; frame-src * https://www.youtube.com https://youtube.com;");
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content: blob:; style-src * 'self' 'unsafe-inline'; media-src * 'self' 'unsafe-inline'; img-src * 'self' 'data:'; frame-src * 'self' https://www.youtube.com https://youtube.com;">
+  
   <title>Cobra Gaming - Unravel</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="avaliacao.css" />
@@ -48,12 +54,28 @@
       <div class="banner-jogo">
         <img src="imagens/unravel_thumb.png" alt="Banner do Unravel" />
       </div>
+
+      <div class="container-trailer">
+        <h3>Trailer Oficial</h3>
+          <div class="video-moldura">
+            <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/V3I1l_lV2hU" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+      </div>
+
       <div class="conteudo-descricao-jogo">
         <h2>Unravel</h2>
         <p>Unravel apresenta Yarny, um personagem feito de um único fio de lã. Embarque com Yarny em uma aventura aparentemente maior que a vida para reconectar as memórias perdidas de uma família. Inspirado pelos ambientes únicos e de tirar o fôlego do norte da Escandinávia, Unravel é um quebra-cabeças de plataforma baseado em física visualmente deslumbrante sobre amor, esperança e a jornada da vida.</p>
         
         <div class="acoes-compra">
-            <button class="botao-padrao botao-comprar-agora">Comprar</button>
+            <button class="botao-padrao botao-comprar-agora">Comprar por R$ 85,00</button>
             <button class="botao-secundario botao-add-desejo">❤️ Adicionar à Lista de Desejos</button>
         </div>
 
@@ -83,7 +105,6 @@
             </div>
             <div id="novos-comentarios-lista">
             </div>
-
         </div>
       </div>
     </section>
