@@ -1,76 +1,676 @@
-//barra lateral
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const barraLateral = document.querySelector('.barra-lateral'); /* quesele = SELECIONA ESPECIFICAMENTE OS NÓS DE .barra-lateral DO CSS */
-    const overlayMenu = document.querySelector('.overlay-menu');
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  height: 100vh;
+  color: white;
+  background: #0c161f;
+  overflow: hidden;
+}
 
-    menuToggle.addEventListener('click', function() {  // Listener = espera pelo click acontecer, e qnd ocorre ativa tudo ali
-        barraLateral.classList.toggle('active');
-        overlayMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    });
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    overlayMenu.addEventListener('click', function() {   // Listener = espera pelo click acontecer, e qnd ocorre ativa tudo ali
-        barraLateral.classList.remove('active');
-        overlayMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
-    });
-});
+.barra-lateral {
+  width: 280px;
+  background: rgba(7, 10, 25, 0.95);
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  gap: 30px;
+  border-radius: 15px;
+  margin: 20px;
+  flex-shrink: 0;
 
-// fale conosco (vai ser usado para relator problemas no site)
+  /* Sempre e usado qnd a barra e ativada */
+  position: fixed;
+  left: -100%;
+  top: 0;
+  height: 100vh;
+  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+  border-radius: 0;
+  margin: 0;
+  overflow-y: auto;
+  justify-content: flex-start;
+  display: none; /* escondido pelo DEFAULT */
+}
 
-const contatoForm = document.querySelector('.formulario-contato');
-  if (contatoForm) {
-    contatoForm.addEventListener('submit', (e) => {
-      e.preventDefault();  //prevDef = Previne o que aconteceria normalmente (neste caso, antes de "enviar" aparece a mensagem do alert)
-      alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-      contatoForm.reset();
-    });
+.barra-lateral.active {
+  left: 0; /* Mostra se ativo */
+  display: flex; /* mostra qnd ativo */
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  user-select: none;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.logo h1 {
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  user-select: none;
+  margin-top: -15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+nav ul li a {
+  font-size: 16px;
+  color: #ddd;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: rgba(255 255 255 / 0.15);
+  color: white;
+}
+
+.icone {
+  font-size: 18px;
+  user-select: none;
+}
+
+.conteudo-principal {
+  flex-grow: 1;
+  display: flex; 
+  flex-direction: column;
+  padding: 30px 40px 40px 0;
+  overflow-y: auto;
+  max-width: 900px; /* Adicionado para limitar a largura do conteúdo */
+  margin: 0 auto; /* Adicionado para centralizar o conteúdo */
+}
+
+.conteudo-principal::-webkit-scrollbar { width: 8px; }
+.conteudo-principal::-webkit-scrollbar-thumb { background: rgba(255 255 255 / 0.15); border-radius: 8px; }
+.conteudo-principal::-webkit-scrollbar-track { background: transparent; }
+
+.pesquisa-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.pesquisa-carrinho input[type="search"] {
+  flex-grow: 1;
+  max-width: 900px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  background: rgba(255 255 255 / 0.1);
+  color: white;
+  outline: none;
+}
+
+.icones-carrinho {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: 30px;
+  font-size: 22px;
+}
+.icones-carrinho a {
+    display: flex;
+    align-items: center;
+    color: #ddd;
+    transition: color 0.3s;
+}
+.icones-carrinho a:hover {
+    color: white;
+}
+
+.corpo-autenticacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0c161f;
+  height: 100vh;
+}
+
+.container-autenticacao {
+  background: rgba(7, 10, 25, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  margin: 20px;
+}
+
+.formulario-autenticacao h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.grupo-input {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.grupo-input label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.grupo-input input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.opcoes-formulario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+.opcoes-formulario a { color: #00ff88; }
+.opcoes-formulario a:hover { text-decoration: underline; }
+
+.botao-autenticacao {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #00ff88;
+  color: #0c161f;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+.botao-autenticacao:hover { background: #00cc66; }
+
+.alternar-autenticacao { margin-top: 20px; font-size: 14px; }
+.alternar-autenticacao a { color: #00ff88; font-weight: 700; }
+.link-voltar { display: inline-block; margin-top: 20px; color: #00ff88; font-weight: 600; }
+
+.cabecalho-secao {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.cabecalho-secao h2, .cabecalho-secao h3 {
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  flex-grow: 1;
+  letter-spacing: 0.05em;
+}
+
+.ver-tudo { font-size: 12px; color: white; opacity: 0.7; }
+
+.botao-padrao {
+  background: #00ff88;
+  color: #0c161f;
+  border: none;
+  border-radius: 35px;
+  padding: 10px 40px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.botao-padrao:hover { background: #00cc66; }
+
+.botao-secundario {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 35px;
+    padding: 12px 30px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botao-secundario:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    color: white;
+}
+
+.mensagem-vazia { text-align: center; font-size: 18px; color: rgba(255 255 255 / 0.6); margin-top: 50px; }
+
+.container-carrossel {
+  max-width: 900px;
+  margin-bottom: 35px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  aspect-ratio: 16 / 7;
+}
+
+.wrapper-carrossel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slides-carrossel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; 
+  height: 100%;
+}
+
+a.slide-carrossel {
+  width: 33.333%; 
+  flex-shrink: 0;
+  position: relative;
+  display: block;
+}
+
+.slide-carrossel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.controles-carrossel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.navegacao-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.navegacao-dots label {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#radio-carrossel1:checked ~ .wrapper-carrossel .navegacao-dots label[for="radio-carrossel1"],
+#radio-carrossel2:checked ~ .wrapper-carrossel .navegacao-dots label[for="radio-carrossel2"],
+#radio-carrossel3:checked ~ .wrapper-carrossel .navegacao-dots label[for="radio-carrossel3"] {
+  background: #00ff88;
+}
+
+#radio-carrossel1:checked ~ .wrapper-carrossel .slides-carrossel { transform: translateX(0); }
+#radio-carrossel2:checked ~ .wrapper-carrossel .slides-carrossel { transform: translateX(-33.333%); }
+#radio-carrossel3:checked ~ .wrapper-carrossel .slides-carrossel { transform: translateX(-66.666%); }
+
+.info-destaque {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: white;
+  text-shadow: 0 0 8px #000;
+}
+.info-destaque h2 { font-size: 30px; margin-bottom: 10px; }
+.info-destaque .subtitulo { font-size: 13px; letter-spacing: 0.3em; }
+
+.recomendados { max-width: 900px; }
+.recomendados .cabecalho-secao h3 { font-size: 14px; }
+.cartoes-jogo { display: flex; gap: 30px; }
+
+.cartao-jogo {
+  background: rgba(255 255 255 / 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  width: calc(50% - 15px);
+  cursor: pointer;
+  display: block;
+}
+.cartao-jogo:hover { background: rgba(255 255 255 / 0.2); }
+.cartao-jogo img { width: 100%; height: 160px; object-fit: cover; }
+.cartao-jogo h4 { padding: 12px 15px 5px; font-size: 18px; }
+.cartao-jogo .tags { display: flex; gap: 6px; padding: 0 15px 10px; flex-wrap: wrap; }
+.cartao-jogo .tags span { background: rgba(255 255 255 / 0.15); border-radius: 12px; font-size: 11px; padding: 3px 8px; }
+.cartao-jogo .preco { padding: 0 15px 15px; font-weight: 700; font-size: 14px; }
+
+    .container-carrossel {
+      display: flex;
+      justify-content: center;
+    }
+
+
+.secao-biblioteca { max-width: 900px; margin: 0 auto; }
+.banner-biblioteca {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: url("imagens/planet_of_lana_banner.png") center/cover;
+}
+.banner-biblioteca .overlay {
+  position: absolute; inset: 0; background: rgba(12, 22, 31, 0.6);
+  display: flex; justify-content: center; align-items: center;
+}
+.banner-biblioteca h2 { font-size: 32px; font-weight: 700; }
+
+.grid-biblioteca { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+.cartao-biblioteca {
+  background: rgba(255 255 255 / 0.1); border-radius: 20px; overflow: hidden;
+  padding-bottom: 20px; display: flex; flex-direction: column; align-items: center;
+}
+.cartao-biblioteca img { width: 100%; height: 160px; object-fit: cover; }
+.cartao-biblioteca h3 { font-size: 20px; margin: 15px 0 8px; }
+.cartao-biblioteca .tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 15px; }
+.cartao-biblioteca .tags span { background: rgba(255 255 255 / 0.15); border-radius: 15px; padding: 5px 14px; font-size: 12px; }
+
+
+.secao-carrinho { max-width: 900px; margin: 0 auto; }
+.tabela-carrinho { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+.tabela-carrinho thead th { text-align: left; padding: 12px 15px; border-bottom: 2px solid rgba(255 255 255 / 0.3); }
+.tabela-carrinho tbody td { padding: 15px; vertical-align: middle; border-bottom: 1px solid rgba(255 255 255 / 0.15); }
+.info-produto { display: flex; align-items: center; gap: 15px; }
+.info-produto img { width: 80px; height: 60px; object-fit: cover; border-radius: 10px; }
+.tabela-carrinho input[type="number"] { width: 60px; padding: 6px 10px; border-radius: 8px; border: none; background: rgba(255 255 255 / 0.15); color: white; text-align: center; }
+.botao-remover { background: transparent; border: none; font-size: 24px; color: rgba(255 255 255 / 0.5); cursor: pointer; }
+.botao-remover:hover { color: #ff4444; }
+.resumo-carrinho { display: flex; justify-content: flex-end; gap: 25px; font-size: 20px; font-weight: 700; margin-bottom: 25px; }
+.preco-total { color: #00ff88; }
+.botao-finalizar { display: block; max-width: 250px; margin-left: auto; padding: 15px 0; }
+
+
+.secao-lista-desejos { max-width: 900px; margin: 0 auto; }
+.grid-lista-desejos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.cartao-lista-desejos { background: rgba(255 255 255 / 0.1); border-radius: 20px; overflow: hidden; padding-bottom: 20px; display: flex; flex-direction: column; align-items: center; }
+.cartao-lista-desejos img { width: 100%; height: 160px; object-fit: cover; }
+.cartao-lista-desejos h3 { font-size: 20px; margin: 15px 0 8px; }
+.cartao-lista-desejos .tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 15px; }
+.cartao-lista-desejos .tags span { background: rgba(255 255 255 / 0.15); border-radius: 15px; padding: 5px 14px; font-size: 12px; }
+.cartao-lista-desejos .acoes { display: flex; gap: 10px; width: 90%; justify-content: center; }
+.botao-add-carrinho { flex-grow: 1; font-size: 14px; padding: 10px 0; }
+.cartao-lista-desejos .botao-remover { line-height: 1; }
+
+
+.secao-descontos { max-width: 900px; margin: 0 auto; }
+.grid-descontos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.cartao-desconto { background: rgba(255 255 255 / 0.1); border-radius: 20px; overflow: hidden; padding-bottom: 20px; display: flex; flex-direction: column; align-items: center; }
+.cartao-desconto img { width: 100%; height: 160px; object-fit: cover; }
+.cartao-desconto h3 { font-size: 20px; margin: 15px 0 8px; }
+.cartao-desconto .descricao { font-size: 14px; color: rgba(255 255 255 / 0.8); margin: 0 15px 15px; text-align: center; }
+.info-preco { display: flex; gap: 15px; align-items: center; margin-bottom: 15px; }
+.preco-original { text-decoration: line-through; color: rgba(255 255 255 / 0.5); }
+.preco-desconto { color: #00ff88; font-weight: 700; font-size: 18px; }
+
+
+.secao-carteira { max-width: 900px; margin: 0 auto; }
+.saldo-carteira { background: rgba(0, 255, 136, 0.15); border-radius: 15px; padding: 20px 30px; text-align: center; margin-bottom: 30px; }
+.saldo-carteira span { display: block; font-size: 18px; color: rgba(255 255 255 / 0.8); margin-bottom: 5px; }
+.saldo-carteira strong { font-size: 36px; color: #00ff88; }
+.acoes-carteira { display: flex; gap: 20px; margin-bottom: 40px; justify-content: center; }
+.historico-carteira { width: 100%; border-collapse: collapse; }
+.historico-carteira thead th { text-align: left; padding: 12px 15px; border-bottom: 2px solid rgba(255 255 255 / 0.3); }
+.historico-carteira tbody td { padding: 15px; border-bottom: 1px solid rgba(255 255 255 / 0.15); }
+.historico-carteira .credito { color: #00ff88; font-weight: 700; }
+.historico-carteira .debito { color: #ff4444; font-weight: 700; }
+
+
+.secao-amigos { max-width: 900px; margin: 0 auto; }
+.lista-amigos { display: flex; flex-direction: column; gap: 15px; }
+.item-amigo { background: rgba(255 255 255 / 0.1); border-radius: 15px; padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; }
+.info-amigo { display: flex; align-items: center; gap: 15px; }
+.info-amigo img { width: 50px; height: 50px; border-radius: 50%; }
+.detalhes-amigo h4 { font-size: 18px; }
+.detalhes-amigo p { font-size: 14px; color: #bbb; }
+.status-amigo { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.indicador-status { width: 10px; height: 10px; border-radius: 50%; }
+.indicador-status.online { background: #00ff88; box-shadow: 0 0 5px #00ff88; }
+.indicador-status.offline { background: #888; }
+.indicador-status.ingame { background: #ff8c00; box-shadow: 0 0 5px #ff8c00; }
+
+
+.secao-fale-conosco { max-width: 900px; margin: 0 auto; }
+.formulario-contato { background: rgba(255 255 255 / 0.1); padding: 30px; border-radius: 20px; display: flex; flex-direction: column; gap: 20px; }
+.formulario-contato label { font-weight: 600; }
+.formulario-contato input, .formulario-contato textarea { width: 100%; padding: 12px 15px; border-radius: 10px; border: none; background: rgba(7, 10, 25, 0.95); color: white; font-size: 16px; }
+.formulario-contato textarea { resize: vertical; min-height: 150px; }
+.botao-enviar { align-self: flex-start; }
+
+
+.secao-descricao-jogo { max-width: 900px; margin: 0 auto; }
+.banner-jogo img { width: 100%; aspect-ratio: 16/7; object-fit: cover; border-radius: 20px; }
+.conteudo-descricao-jogo { padding: 30px 0; }
+.conteudo-descricao-jogo h2 { font-size: 32px; }
+.conteudo-descricao-jogo > p { font-size: 16px; line-height: 1.7; color: #ccc; margin-bottom: 30px; }
+
+.acoes-compra {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+.botao-comprar-agora {
+    padding: 15px 50px;
+    font-size: 18px;
+}
+
+
+.secao-avaliacoes { margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 30px; }
+.secao-avaliacoes h3 { font-size: 24px; margin-bottom: 20px; }
+.lista-avaliacoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.cartao-avaliacao { background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; }
+.cabecalho-avaliacao { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+.cabecalho-avaliacao img { width: 45px; height: 45px; border-radius: 50%; }
+.cabecalho-avaliacao h4 { font-size: 18px; }
+.cartao-avaliacao p { font-size: 15px; color: #ddd; line-height: 1.6; }
+
+
+.secao-perfil { max-width: 900px; margin: 0 auto; }
+.container-perfil { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
+.container-avatar { display: flex; flex-direction: column; align-items: center; gap: 15px; min-width: 180px; }
+.avatar { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #00ff88; }
+.formulario-perfil { flex-grow: 1; max-width: 600px; }
+.formulario-perfil .grupo-input { margin-bottom: 15px; }
+.formulario-perfil fieldset { margin-top: 20px; border: 1px solid rgba(255 255 255 / 0.3); border-radius: 15px; padding: 15px 20px 20px; }
+.formulario-perfil fieldset legend { padding: 0 10px; }
+.acoes-formulario { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+.botao-salvar, .botao-sair { flex: 1 1 150px; padding: 12px 0; font-weight: 700; font-size: 16px; border-radius: 35px; border: none; cursor: pointer; text-align: center; }
+.botao-salvar { background: #00ff88; color: #0c161f; }
+.botao-sair { background: rgba(255, 68, 68, 0.8); color: white; }
+
+
+.secao-notificacoes { max-width: 900px; margin: 0 auto; }
+.lista-notificacoes { display: flex; flex-direction: column; gap: 15px; }
+.item-notificacao { background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 20px; display: flex; align-items: center; gap: 20px; }
+.item-notificacao .icone-notificacao { font-size: 24px; }
+.item-notificacao p { flex-grow: 1; line-height: 1.6; }
+.item-notificacao .data-notificacao { font-size: 14px; color: #bbb; flex-shrink: 0; }
+
+
+.menu-toggle {
+    display: block; /* Sempre mostra o menu */
+    cursor: pointer;
+    margin-right: 20px;
+    z-index: 1001; /* garante que fica acima dos outros */
+}
+
+.hamburguer {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburguer::before {
+    top: -8px;
+}
+
+.hamburguer::after {
+    top: 8px;
+}
+
+
+.menu-toggle.active .hamburguer {
+    background-color: transparent;
+}
+
+.menu-toggle.active .hamburguer::before {
+    transform: rotate(45deg) translate(5px, 7px);
+}
+
+.menu-toggle.active .hamburguer::after {
+    transform: rotate(-45deg) translate(5px, -7px);
+}
+
+/* Overlay (fundo escuro atrás do menu) */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.overlay-menu.active {
+  display: block;
+}
+
+/*  Ajustes que já existiam  */
+@media (max-width: 900px) {
+  .cartoes-jogo {
+    flex-direction: column;
+    gap: 20px;
   }
-
-//  Saldo da carteira do usuário
-
-const saldoEl = document.querySelector('.saldo-carteira strong');
-  const btnAddCredito = document.querySelector('.botao-add-credito');
-  const tabelaHistorico = document.querySelector('.historico-carteira tbody');
-
-  if (btnAddCredito && saldoEl) {
-    btnAddCredito.addEventListener('click', () => {
-      const valor = parseFloat(prompt('Digite o valor para adicionar:', '50')); //parse = Vai transformar o texto (vai tentar enontrar um numero) em um numero float
-      if (!isNaN(valor) && valor > 0) {  // ISANAN = verifica se o valor é NAN(not a number) ou nao. Se sim True e nao False
-        const saldoAtual = parseFloat(saldoEl.textContent.replace('R$', '').replace(',', '.'));
-        const novoSaldo = saldoAtual + valor;
-        saldoEl.textContent = `R$ ${novoSaldo.toFixed(2).replace('.', ',')}`;
-
-        const novaLinha = document.createElement('tr');
-        novaLinha.innerHTML = `
-          <td data-label="Data">${new Date().toLocaleDateString()}</td>
-          <td data-label="Descrição">Crédito Manual</td>
-          <td data-label="Valor" class="credito">+ R$ ${valor.toFixed(2).replace('.', ',')}</td>
-          <td data-label="Status">Concluído</td>
-        `;
-        tabelaHistorico.prepend(novaLinha);  // prepend = cria/adiciona um novo elemento, neste caso novaLinha
-      } else {
-        alert('Valor inválido.');
-      }
-    });
+  .cartao-jogo {
+    width: 100%;
   }
+  .tabela-carrinho thead, .historico-carteira thead {
+    display: none;
+  }
+  .tabela-carrinho tbody tr, .historico-carteira tbody tr {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(255 255 255 / 0.05);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+  .tabela-carrinho tbody td, .historico-carteira tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    border: none;
+  }
+  .tabela-carrinho tbody td::before, .historico-carteira tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+  }
+  .info-produto {
+    width: 100%;
+  }
+  .info-produto::before {
+    display: none;
+  }
+  .container-perfil {
+    flex-direction: column;
+    align-items: center;
+  }
+  .acoes-formulario {
+    flex-direction: column;
+  }
+}
 
-  // remove itens da lista de Desejos ou manda para o carrinho (ainda não verdadeiramente envia ao carrinho)
+/* --- ESTILO DO TRAILER DE VÍDEO --- */
+.container-trailer {
+  margin: 30px auto;
+  max-width: 600px;  
+  width: 100%;
+  text-align: center;
+}
 
-  document.querySelectorAll('.botao-add-carrinho').forEach(botao => {
-    botao.addEventListener('click', () => {
-      const jogo = botao.closest('.cartao-lista-desejos').querySelector('h3').textContent;
-      alert(`${jogo} foi adicionado ao carrinho.`);
-      botao.closest('.cartao-lista-desejos').remove();
-    });
-  });
+.container-trailer h3 {
+  font-size: 18px;
+  color: #00ff88;
+  margin-bottom: 15px;
+  text-align: left; 
+  padding-left: 10px;
+}
 
-    document.querySelectorAll('.botao-remover').forEach(botao => {
-    botao.addEventListener('click', () => {  //  Tem alguma coisa errada, qnd tento retirar do carrinho, aparece esta msgn
-      if (confirm('Tem certeza que deseja remover este item da lista de desejos?')) {  
-        botao.closest('.cartao-lista-desejos').remove();
-      }
-    });
-  });
+.video-moldura {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  background: #000; 
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.video-moldura iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
